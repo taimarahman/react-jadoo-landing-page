@@ -1,0 +1,100 @@
+@import "./varibles";
+
+.hero {
+  height: calc(100vh - $nav-height);
+  max-height: 764px;
+  width: 100%;
+  position: relative;
+
+  .decor-1 {
+    position: absolute;
+    right: -10%;
+    bottom: 10%;
+    z-index: -1;
+  }
+
+  .ellipse {
+    position: absolute;
+    right: 100%;
+    top: -30%;
+    width: 478px;
+    height: 496px;
+    background-color: #d5aee4;
+    border-radius: 50%;
+    filter: blur(50px);
+  }
+
+  .decor-2 {
+    position: relative;
+
+    &::after {
+      content: url(../images/Decore2.svg);
+      width: 105%;
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -10%);
+      z-index: -1;
+    }
+  }
+}
+
+.content {
+  @include flexbox(flex-start, center);
+  flex-direction: column;
+  row-gap: 2rem;
+
+  .tagline {
+    color: $primary;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+  }
+
+  .heading {
+    color: $heading-blue;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 900;
+    letter-spacing: -4px;
+  }
+
+  .description {
+    color: $light-blue;
+    font-weight: 500;
+    width: 80%;
+  }
+
+  .CTA {
+    @include flexbox(center, space-between);
+    width: 65%;
+  }
+
+  .find-btn {
+    background-color: $secondary;
+    color: #fff;
+    border-radius: 0.625rem;
+    height: 3.75rem;
+    border: none;
+  }
+
+  .play-demo {
+    @include flexbox(center, space-between);
+    gap: 0 1.5rem;
+
+    .play-btn {
+      @include flexbox(center, center);
+      width: 3.25rem;
+      height: 3.25rem;
+      border-radius: 50%;
+      border: none;
+      background-color: $primary;
+    }
+    p {
+      color: $grey;
+    }
+  }
+}
+
+.panel {
+  height: 100%;
+  @include flexbox(center, center);
+}

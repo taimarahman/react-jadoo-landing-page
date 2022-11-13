@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&family=Poppins:wght@400;500;600;700&family=Volkhov:wght@700&display=swap");
 /* Box sizing rules */
 *,
 *::before,
@@ -101,5 +102,56 @@ svg {
   font-size: 3rem; /* 48px */
   line-height: 1;
 }
+.text-title {
+  font-size: 5.25rem; /* 84px */
+  line-height: 6rem;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 5px;
+  height: 3rem;
+  padding: 0 1.5rem;
+  font-size: 1.0625rem;
+  line-height: 1rem;
+  min-height: 3rem;
+}
+
+*[role="button"] {
+  text-decoration: none;
+  color: inherit;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+}
 
 @import "./nav";
+@import "./home";

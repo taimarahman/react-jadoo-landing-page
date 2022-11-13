@@ -1,6 +1,81 @@
+@import "./varibles";
+
 .navbar {
+  font-family: "Open Sans", sans-serif;
   position: sticky;
   top: 0;
-  display: flex;
-  background-color: red;
+  @include flexbox(center, space-between);
+  background-color: transparent;
+  height: $nav-height;
+  z-index: 999;
+}
+
+.nav-wrapper {
+  @include flexbox(center, space-between);
+  width: 70%;
+  height: 100%;
+  font-size: 1.0625rem;
+
+  .nav {
+    @include flexbox(center, space-evenly);
+    width: 60%;
+  }
+  .nav-item {
+    line-height: $nav-height;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: $nav-text;
+  }
+}
+
+.dropdown {
+  position: relative;
+  height: 100%;
+
+  label {
+    line-height: $nav-height;
+
+    &::after {
+      content: url(../images/arrowDown.svg);
+      display: inline-block;
+      margin-left: 0.5em;
+      vertical-align: 0.1em;
+    }
+  }
+
+  .dropdown-content {
+    position: absolute;
+    top: 70%;
+    right: 0;
+    display: none;
+    background-color: $primary;
+    color: #fff;
+    min-width: 4rem;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+
+    li {
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  &:hover .dropdown-content {
+    display: block;
+  }
+}
+
+.signup-btn {
+  color: $nav-text;
+  border: 1px solid $nav-text;
+
+  &:hover {
+    background-color: $nav-text;
+    color: #fff;
+  }
 }
